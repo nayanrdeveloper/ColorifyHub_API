@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 require("dotenv/config");
-const paletteroute_1 = __importDefault(require("../src/routes/paletteroute"));
+const paletteroute_1 = __importDefault(require("./routes/paletteroute"));
 const errorMiddlewares_1 = require("./middlewares/errorMiddlewares");
 const databaseConfig_1 = __importDefault(require("./config/databaseConfig"));
 const app = (0, express_1.default)();

@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import paletteRoute from '../src/routes/paletteroute';
+import paletteRoute from './routes/paletteroute';
 import { errorHandler } from './middlewares/errorMiddlewares';
 import connectToDatabase from './config/databaseConfig';
 
