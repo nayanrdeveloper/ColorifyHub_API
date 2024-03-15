@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
+const mongoose_1 = require('mongoose');
 const PaletteSchema = new mongoose_1.Schema({
     color1: { type: String, required: true },
     color2: { type: String, required: true },
