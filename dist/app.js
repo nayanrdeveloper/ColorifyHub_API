@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 require("dotenv/config");
 const paletteroute_1 = __importDefault(require("./routes/paletteroute"));
+const gradientRoute_1 = __importDefault(require("./routes/gradientRoute"));
 const errorMiddlewares_1 = require("./middlewares/errorMiddlewares");
 const databaseConfig_1 = __importDefault(require("./config/databaseConfig"));
 const app = (0, express_1.default)();
@@ -14,6 +15,7 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(errorMiddlewares_1.errorHandler);
 app.use('/api', paletteroute_1.default);
+app.use('/api', gradientRoute_1.default);
 const PORT = parseInt(process.env.PORT || '4000', 10);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

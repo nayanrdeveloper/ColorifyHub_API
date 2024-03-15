@@ -1,4 +1,4 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { IPalette } from '../types/palettesType';
 
 const PaletteSchema = new Schema({
