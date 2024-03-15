@@ -12,26 +12,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllPalettes = void 0;
-const paletteModel_1 = __importDefault(require("../models/paletteModel"));
-const getAllPalettes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.getAllGradients = void 0;
+const gradientModel_1 = __importDefault(require("../models/gradientModel"));
+const getAllGradients = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
-        const totalPalettes = yield paletteModel_1.default.countDocuments();
-        const totalPages = Math.ceil(totalPalettes / limit);
+        const totalGradients = yield gradientModel_1.default.countDocuments();
+        const totalPages = Math.ceil(totalGradients / limit);
         if (page > totalPages) {
             res.status(400).json({ error: 'Invalid page number' });
         }
         const skip = (page - 1) * limit;
-        const palettes = yield paletteModel_1.default.find().skip(skip).limit(limit);
+        const gradeints = yield gradientModel_1.default.find().skip(skip).limit(limit);
         res.status(200).json({
-            data: { palettes },
-            meta: { page, totalPages, totalRecords: totalPalettes },
+            gradeints: gradeints,
+            meta: { page, totalPages, totalRecords: totalGradients },
         });
     }
     catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-exports.getAllPalettes = getAllPalettes;
+exports.getAllGradients = getAllGradients;
